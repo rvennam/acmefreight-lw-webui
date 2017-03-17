@@ -66,7 +66,7 @@ export default class MapMarker extends React.PureComponent {
         const theWeatherCircleCenterInPixels =
           this.world2Screen(this.latLng2World(this.props), this.props.zoom);
         const diameter =
-          2 * Math.abs(aPointOnTheWeatherCircleInPixels.y - theWeatherCircleCenterInPixels.y);
+          1.5 * Math.abs(aPointOnTheWeatherCircleInPixels.y - theWeatherCircleCenterInPixels.y);
 
         const bounds = {
           width: `${diameter}px`,

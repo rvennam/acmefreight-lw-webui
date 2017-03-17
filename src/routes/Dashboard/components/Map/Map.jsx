@@ -40,6 +40,13 @@ export class Map extends React.PureComponent {
 
   componentWillMount() {
     this.setState({ zoom: this.props.zoom });
+    try {
+      setTimeout(this.selectRetailer.bind(this), 2000);
+    }
+    catch (e) {
+      console.log(e);
+    }
+
     const intervalId = setInterval(this.timer.bind(this), 200);
     this.setState({ intervalId });
   }
@@ -51,6 +58,10 @@ export class Map extends React.PureComponent {
 
   onMapChange(change) {
     this.setState({ zoom: change.zoom });
+  }
+
+  selectRetailer() {
+    this.props.selectMarker('retailer', this.props.retailers[1]);
   }
 
 //Last minute animation requirement for IC Demo.

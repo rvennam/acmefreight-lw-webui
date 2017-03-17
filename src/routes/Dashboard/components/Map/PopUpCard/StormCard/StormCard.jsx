@@ -47,7 +47,7 @@ export const StormCard = (props) => {
         {recommendations.map((recommendation, index) =>
           <div className={classes.shipmentDialog} key={recommendation._id}>
             <div className={classes.shipmentTitle}>
-              Shipment from {props.idToNameResolver.resolve('distributionCenter', recommendation.fromId)} to {props.idToNameResolver.resolve('retailer', recommendation.toId)}
+              <i className={`fa fa-exclamation-triangle ${classes.icon}`} aria-hidden="true"></i>Shipment from {props.idToNameResolver.resolve('distributionCenter', recommendation.fromId)} to {props.idToNameResolver.resolve('retailer', recommendation.toId)}
             </div>
             <div className={classes.shipmentDialogActionContainer}>
               <div
@@ -67,6 +67,9 @@ export const StormCard = (props) => {
             </div>
           </div>
         )}
+      </div>
+      <div className={classes.warningMessage}>
+        <i className={`fa fa-exclamation-triangle ${classes.icon}`} aria-hidden="true"></i>Warning: Delayed Shipments. Consider adding additional trucks.
       </div>
     </div>
   );

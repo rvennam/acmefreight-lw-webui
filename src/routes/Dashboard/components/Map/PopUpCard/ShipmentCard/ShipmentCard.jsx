@@ -43,7 +43,7 @@ export class ShipmentCard extends React.PureComponent {
 
   render() {
     console.log(this.props.shipment);
-    const {
+    let {
       status,
       currentLocation,
       estimatedTimeOfArrival,
@@ -54,6 +54,10 @@ export class ShipmentCard extends React.PureComponent {
       shipmentHumidity,
       shipmentTemp,
     } = this.props.shipment;
+
+    averageSpeed = averageSpeed || 42;
+    shipmentHumidity = averageSpeed || 28;
+    shipmentTemp = averageSpeed || 32;
 
     return (
       <div className={classes.contentContainer}>
@@ -96,9 +100,9 @@ export class ShipmentCard extends React.PureComponent {
         <div className={classes.subtitle2}>
           Shipment Data
         </div>
-        <div>{averageSpeed && `Average Speed: ${averageSpeed}mph`}</div>
-        <div>{shipmentHumidity && `Humidity: ${shipmentHumidity}%`}</div>
-        <div>{shipmentTemp && `Temperature: ${shipmentTemp}°F`}</div>
+        <div><i className={`fa fa-car ${classes.icon}`} aria-hidden="true"></i>{averageSpeed && `Average Speed: ${averageSpeed}mph`}</div>
+        <div><i className={`fa fa-snowflake-o ${classes.icon}`} aria-hidden="true"></i>{shipmentHumidity && `Humidity: ${shipmentHumidity}%`}</div>
+        <div><i className={`fa fa-thermometer ${classes.icon}`} aria-hidden="true"></i>{shipmentTemp && `Temperature: ${shipmentTemp}°F`}</div>
 
         <div className={classes.subtitle2}>
           Origin

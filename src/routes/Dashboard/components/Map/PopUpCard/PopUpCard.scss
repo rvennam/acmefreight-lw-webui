@@ -155,10 +155,19 @@ small {
   justify-content: center;
 }
 
-.shipmentDialogAction {
+.shipmentDialogActionApprove {
   border: 1px solid $borderColor;
   width:100%;
   cursor: pointer;
+  color: #5b965b;
+  font-weight: 500;
+}
+
+.shipmentDialogActionReject {
+  border: 1px solid $borderColor;
+  width:100%;
+  cursor: pointer;
+  color: red;
 }
 
 .weatherIcon {

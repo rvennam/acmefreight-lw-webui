@@ -52,14 +52,14 @@ export const StormCard = (props) => {
             <div className={classes.shipmentDialogActionContainer}>
               <div
                 id={`reject-${index}`}
-                className={classes.shipmentDialogAction}
+                className={classes.shipmentDialogActionReject}
                 onClick={() => handleRecommendation(recommendation._id, false)}
               >
                 Reject
               </div>
               <div
                 id={`approve-${index}`}
-                className={classes.shipmentDialogAction}
+                className={classes.shipmentDialogActionApprove}
                 onClick={() => handleRecommendation(recommendation._id, true)}
               >
                 Approve

@@ -43,10 +43,11 @@
 // --------------------------------------------
 // Shipment
 // --------------------------------------------
+
 .shipment {
   color: $map3Primary;
   font-size: 25px;
-  animation: blinker 1s linear 5;
+
 
   & div i {
     padding-top: 4px;
@@ -60,9 +61,29 @@
   }
 }
 
-@keyframes blinker {
-  50% { opacity: 0; }
+.newShipment {
+    animation: blinker 1s linear 5;
+    color: black;
+
+    & div i {
+      padding-top: 4px;
+    }
+
+    &:hover, &.selected {
+      background-color: black;
+      color: white;
+      width: 36px;
+      height: 35px;
+    }
 }
+
+@keyframes blinker {
+  50% { opacity: .5;
+        -webkit-transform: scale(1.6);
+      -ms-transform: scale(1.6);
+      transform: scale(1.6);}
+}
+
 
 // --------------------------------------------
 // Retailer

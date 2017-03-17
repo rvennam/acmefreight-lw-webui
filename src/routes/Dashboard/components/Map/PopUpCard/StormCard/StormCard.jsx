@@ -1,8 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import moment from 'moment';
 import { acknowledgeRecommendation } from 'routes/Dashboard/modules/Dashboard';
 import classes from '../PopUpCard.scss';
 
+const timeFormat = 'MMM Do, h:mm a';
+
+const formatTime = time => moment(time).format(timeFormat);
 
 export const StormCard = (props) => {
   const {
@@ -48,6 +52,7 @@ export const StormCard = (props) => {
           <div className={classes.shipmentDialog} key={recommendation._id}>
             <div className={classes.shipmentTitle}>
               <i className={`fa fa-exclamation-triangle ${classes.icon}`} aria-hidden="true"></i>Shipment from {props.idToNameResolver.resolve('distributionCenter', recommendation.fromId)} to {props.idToNameResolver.resolve('retailer', recommendation.toId)}
+              <div>New ETA: {formatTime(new Date().getTime() + 4 * 24 * 60 * 60 * 1000)}</div>
             </div>
             <div className={classes.shipmentDialogActionContainer}>
               <div

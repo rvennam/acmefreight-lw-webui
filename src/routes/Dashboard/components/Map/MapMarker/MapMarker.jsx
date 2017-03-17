@@ -39,7 +39,7 @@ export default class MapMarker extends React.PureComponent {
 
   render() {
 
-    const { type, id } = this.props;
+    const { type, id, data } = this.props;
 
     let markerIcon;
     let customMarker;
@@ -88,6 +88,7 @@ export default class MapMarker extends React.PureComponent {
     const divClasses = { };
     divClasses[classes.selected] = this.props.selected;
     divClasses[classes[type]] = true;
+    if(type === 'shipment' && !data.seed) divClasses[classes.newShipment] = true;
 
     return (
       <div id={id} className={classNames(divClasses)} onClick={this.handleClick}>

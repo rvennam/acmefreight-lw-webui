@@ -41,7 +41,7 @@ export class Map extends React.PureComponent {
   componentWillMount() {
     this.setState({ zoom: this.props.zoom });
     try {
-      setTimeout(this.selectRetailer.bind(this), 2000);
+      setTimeout(this.selectRetailer.bind(this), 3000);
     }
     catch (e) {
       console.log(e);

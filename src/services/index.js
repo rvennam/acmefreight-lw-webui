@@ -14,7 +14,7 @@ export const callApi = (endpoint, {
     headers: { 'Content-Type': 'application/json', ...headers },
     cache: 'no-store',
     method,
-    body: JSON.stringify(body),
+    body: JSON.stringify(body)
   })
   .then(response => {
     if (response.status === 204) { // good response but no content

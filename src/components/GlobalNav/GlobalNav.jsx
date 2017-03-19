@@ -28,9 +28,9 @@ export const GlobalNav = (props) => (
   <div className={classes.globalNav}>
     <Toolbar style={styles.toolbar}>
       <ToolbarGroup firstChild>
-        <Link to="/">
-          <ToolbarTitle text="Acme Freight - Logistics Wizard" className={classes.title} style={styles.toolbarTitle} />
-        </Link>
+        {/* <Link to="/"> */}
+          <ToolbarTitle text="Acme Freight - Logistics Wizard" onClick={props.endDemoSession} className={classes.title} style={styles.toolbarTitle} />
+        {/* </Link> */}
       </ToolbarGroup>
 
       <ToolbarGroup>
